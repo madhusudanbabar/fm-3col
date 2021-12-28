@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
 *,
 *::after,
 *::before {
@@ -6,11 +8,105 @@
     box-sizing: inherit;
 }
 
+:root {
+    --color-orange: hsl(31, 77%, 52%);
+    --color-cyan-light: hsl(184, 100%, 22%);
+    --color-cyan-dark: hsl(179, 100%, 13%);
+
+    --color-para: hsla(0, 0%, 100%, 0.75);
+    --color-light-gray: hsl(0, 0%, 95%);
+
+    --font-display: "Big Shoulders Display", cursive;
+    --font-para: "Lexend Deca", sans-serif;
+}
+
 html {
     height: 100%;
     font-size: 62.5%;
 }
 
 body {
+    height: 100%;
     font-size: 1.6rem;
+}
+
+.main {
+    margin: 0 auto;
+    max-width: 1440px;
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.container {
+    display: flex;
+    border-radius: 1rem;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: white;
+    max-width: 20rem;
+    padding: 6rem 5rem;
+
+    &:nth-child(1) {
+        background: var(--color-orange);
+    }
+
+    &:nth-child(2) {
+        background: var(--color-cyan-light);
+    }
+
+    &:nth-child(3) {
+        background: var(--color-cyan-dark);
+    }
+
+    &__icon {
+        --icon-size: 6rem;
+        height: var(--icon-size);
+        width: var(--icon-size);
+        display: block;
+        object-fit: contain;
+    }
+
+    &__title {
+        font-size: 4rem;
+        text-transform: uppercase;
+        font-family: var(--font-display);
+    }
+
+    &__desc {
+        font-family: var(--font-para);
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 2;
+        color: var(--color-para);
+    }
+
+    &__cta {
+        padding: 1.5rem 3rem;
+        background: var(--color-light-gray);
+        width: max-content;
+        border-radius: 10rem;
+        text-decoration: none;
+        font-family: var(--font-para);
+        margin-block-start: 3.5rem;
+    }
+}
+
+.color-orange {
+    color: var(--color-orange);
+}
+
+.color-cyan-light {
+    color: var(--color-cyan-light);
+}
+
+.color-cyan-dark {
+    color: var(--color-cyan-dark);
 }
